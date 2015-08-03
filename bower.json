@@ -1,0 +1,21 @@
+{
+  "name": "jquery-github",
+  "main": "Clone in Desktop  Download ZIP",
+  "version": "0.0.1",
+  "homepage": "https://github.com/benderTheCrime/jquery-github",
+  "repository": {
+      "git": "https://github.com/benderTheCrime/jquery-github"
+  },
+  "authors": "Joe Groseclose <@benderTheCrime>",
+  "keywords": [
+    "jquery",
+    "github"
+  ],
+  "ignore": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "Gulpfile.js",
+    "tests/**"
+  ],
+  "license": "MIT"
+}
