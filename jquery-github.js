@@ -59,9 +59,10 @@
                 html += '</a>';
                 me.append(html);
             });
-        }).error(console.warn.bind(
-            null,
-            '$.git: Repositories cannot be fetched while not connected to the internet.'
-        ));
+        }).error(function() {
+            console.warn(
+                '$.git: Repositories cannot be fetched while not connected to the internet.'
+            )
+        });
     };
 })();
