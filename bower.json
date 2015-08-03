@@ -1,7 +1,7 @@
 {
   "name": "$.git",
   "description": "jQuery Extension to easily display a user's GitHub repositories",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/benderTheCrime/jquery-github",
   "repository": {
       "git": "https://github.com/benderTheCrime/jquery-github"

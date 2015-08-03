@@ -35,7 +35,7 @@
         $.getJSON(uri, function(data) {
             err.remove();
             $(data).each(function(i, v) {
-                var html = '<a href="' + v.url + '" target="_blank">',
+                var html = '<a href="' + v.html_url + '" target="_blank">',
                     date = new Date(v.updated_at);
                 html += exclude.indexOf('name') > -1 ?
                     '' : '<h3>' + v.name;
