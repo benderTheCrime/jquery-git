@@ -1,7 +1,7 @@
 {
-  "name": "jquery-github",
-  "main": "Clone in Desktop  Download ZIP",
-  "version": "0.0.1",
+  "name": "$.git",
+  "description": "jQuery Extension to easily display a user's GitHub repositories",
+  "version": "0.0.2",
   "homepage": "https://github.com/benderTheCrime/jquery-github",
   "repository": {
       "git": "https://github.com/benderTheCrime/jquery-github"
@@ -11,6 +11,9 @@
     "jquery",
     "github"
   ],
+  "dependencies": {
+      "jquery": "*"
+  },
   "ignore": [
     ".gitignore",
     "CHANGELOG.md",
