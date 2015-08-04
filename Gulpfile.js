@@ -5,7 +5,7 @@ var gulp =      require('gulp'),
     rename =    require('gulp-rename');
 
 gulp.task('min', function() {
-    return gulp.src('jquery-github.js')
+    return gulp.src('jquery-git.js')
         .pipe(uglify())
         .pipe(
             rename({
