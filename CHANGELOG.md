@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### [0.0.4] - 08-03-2015
 ##### Changed
 - Changed HTML generation
+- Changed repo name
 
 #### [0.0.3] - 08-03-2015
 ##### Fixed
