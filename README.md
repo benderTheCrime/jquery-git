@@ -1,4 +1,4 @@
-## jquery-github ($.git)
+## jquery-git ($.git)
 jQuery Extension to easily display a user's GitHub repositories
 ```javascript
 

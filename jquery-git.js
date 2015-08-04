@@ -38,9 +38,9 @@
                 var html = '<a href="' + v.html_url + '" target="_blank">',
                     date = new Date(v.updated_at);
                 html += exclude.indexOf('name') > -1 ?
-                    '' : '<h3>' + v.name;
+                    '' : '<h3>' + v.name + '</h3>';
                 html += exclude.indexOf('updatedAt') > -1 ?
-                    '' : '<i>' + [
+                    '' : '<i>Last Updated: ' + [
                         date.getMonth() + 1,
                         date.getDate(),
                         date.getFullYear()
@@ -50,9 +50,8 @@
                     ].join(':') +
                     (date.getHours() > 12 ? 'PM' : 'AM') +
                     '</i>';
-                html += '</h3>';
                 html += exclude.indexOf('description') > -1 ?
-                    '' : '<span>' + v.description + '</span>';
+                    '' : '<div>' + v.description + '</div>';
                 $(include).each(function(i, w) {
                     html += '<span>' + (v[ w ] || '') + '</span>';
                 });
