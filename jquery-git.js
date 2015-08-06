@@ -25,9 +25,8 @@
 
         // Add an error message to the div
         err = $(
-            '<span class="jquery-git-error">No GitHub repos found for ' +
-            username +
-            '</span>'
+            '<div class="jquery-git-error">No GitHub repos found for ' +
+            username + '</div>'
         );
         me.append(err);
 
