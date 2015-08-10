@@ -62,5 +62,7 @@
                 '$.git: Repositories cannot be fetched while not connected to the internet.'
             )
         });
+
+        return this;
     };
 })();

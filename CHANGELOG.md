@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+#### [0.1.1] - 08-05-2015
+##### Fixed
+- I forgot to return `this`. How foolish!
+
 ### [0.1.0] - 08-05-2015
 #### Changed
 - Changed Error message from `span` to `div`
