@@ -32,31 +32,41 @@
 
         // Get the repositories
         $.getJSON(uri, function(data) {
-            err.remove();
-            $(data).each(function(i, v) {
-                var html = '<a href="' + v.html_url + '" target="_blank">',
-                    date = new Date(v.updated_at);
-                html += exclude.indexOf('name') > -1 ?
-                    '' : '<h3>' + v.name + '</h3>';
-                html += exclude.indexOf('updatedAt') > -1 ?
-                    '' : '<i>Last Updated: ' + [
-                        date.getMonth() + 1,
-                        date.getDate(),
-                        date.getFullYear()
-                    ].join('/') + ' ' + [
-                        date.getHours() > 12 ? date.getHours() - 12 : date.getHours(),
-                        date.getMinutes()
-                    ].join(':') +
-                    (date.getHours() > 12 ? 'PM' : 'AM') +
-                    '</i>';
-                html += v.description && exclude.indexOf('description') > -1 ?
-                    '' : '<div>' + v.description + '</div>';
-                $(include).each(function(i, w) {
-                    html += '<span>' + (v[ w ] || '') + '</span>';
+            if (data && data.length) {
+                err.remove();
+                var html = '';
+                $(data).each(function(i, v) {
+                    var date = new Date(v.updated_at);
+                    html += '<a href="' + v.html_url + '" target="_blank">' +
+                        (
+                            exclude.indexOf('name') > -1 ?
+                                '' : '<h3>' + v.name + '</h3>'
+                        ) +
+                        (
+                            exclude.indexOf('updatedAt') > -1 ?
+                                '' : '<i>Last Updated: ' + [
+                                    date.getMonth() + 1,
+                                    date.getDate(),
+                                    date.getFullYear()
+                                ].join('/') + ' ' + [
+                                    date.getHours() > 12 ?
+                                        date.getHours() - 12 : date.getHours(),
+                                    date.getMinutes()
+                                ].join(':') +
+                                (date.getHours() > 12 ? 'PM' : 'AM') +
+                                '</i>'
+                        ) +
+                        (
+                            v.description && exclude.indexOf('description') > -1 ?
+                                '' : '<div>' + v.description + '</div>'
+                        );
+                    $(include).each(function(i, w) {
+                        html += '<span>' + (v[ w ] || '') + '</span>';
+                    });
+                    html += '</a>';
                 });
-                html += '</a>';
                 me.append(html);
-            });
+            }
         }).error(function() {
             console.warn(
                 '$.git: Repositories cannot be fetched while not connected to the internet.'
