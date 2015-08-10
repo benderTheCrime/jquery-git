@@ -49,7 +49,7 @@
                     ].join(':') +
                     (date.getHours() > 12 ? 'PM' : 'AM') +
                     '</i>';
-                html += exclude.indexOf('description') > -1 ?
+                html += v.description && exclude.indexOf('description') > -1 ?
                     '' : '<div>' + v.description + '</div>';
                 $(include).each(function(i, w) {
                     html += '<span>' + (v[ w ] || '') + '</span>';

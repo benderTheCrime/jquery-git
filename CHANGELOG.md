@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 #### [0.1.1] - 08-05-2015
 ##### Fixed
 - I forgot to return `this`. How foolish!
+- Make sure that no description renders without a description.
 
 ### [0.1.0] - 08-05-2015
 #### Changed
