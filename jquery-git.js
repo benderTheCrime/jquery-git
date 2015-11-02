@@ -17,6 +17,7 @@
             ].join('/'),
             exclude = opts.exclude || [],
             include = opts.include || [],
+            limit = !isNaN(opts.limit) ? opts.limit : undefined,
             err;
 
         if (!username) {
@@ -34,10 +35,19 @@
         $.getJSON(uri, function(data) {
             if (data && data.length) {
                 err.remove();
-                var html = '';
+                var html = '',
+                    dataLengthLimited = false;
+
+                // Check to see if a limit has been set
+                if (limit && data.length > limit) {
+                    data = data.slice(0, limit);
+                    dataLengthLimited = true;
+                }
+
                 $(data).each(function(i, v) {
                     var date = new Date(v.updated_at);
-                    html += '<a href="' + v.html_url + '" target="_blank">' +
+                    html += '<a class="jquery-git-repo-link" href="' +
+                    v.html_url + '" target="_blank">' +
                         (
                             exclude.indexOf('name') > -1 ?
                                 '' : '<h3>' + v.name + '</h3>'
@@ -65,12 +75,20 @@
                     });
                     html += '</a>';
                 });
+
+                if (dataLengthLimited) {
+                    html += '<a class="jquery-git-owner-link" href="' +
+                    data[ 0 ].owner.url + '" target="_blank">' + (
+                        opts.limitText || 'See More Here!'
+                    ) +'</a>';
+                }
+
                 me.append(html);
             }
         }).error(function() {
             console.warn(
                 '$.git: Repositories cannot be fetched while not connected to the internet.'
-            )
+            );
         });
 
         return this;
