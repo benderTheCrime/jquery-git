@@ -1,7 +1,11 @@
 {
   "name": "jquery-git",
   "description": "jQuery Extension to easily display a user's GitHub repositories",
+<<<<<<< Updated upstream
   "version": "0.2.0",
+=======
+  "version": "0.1.3",
+>>>>>>> Stashed changes
   "homepage": "https://github.com/benderTheCrime/jquery-git",
   "repository": {
       "git": "https://github.com/benderTheCrime/jquery-git"
