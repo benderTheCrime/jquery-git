@@ -78,7 +78,7 @@
 
                 if (dataLengthLimited) {
                     html += '<a class="jquery-git-owner-link" href="' +
-                    data[ 0 ].owner.url + '" target="_blank">' + (
+                    data[ 0 ].owner.html_url + '" target="_blank">' + (
                         opts.limitText || 'See More Here!'
                     ) +'</a>';
                 }
