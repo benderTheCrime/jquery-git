@@ -2,12 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-### [0.1.3] - 11-02-2015
+### [0.2.0] - 11-02-2015
 #### Added
 - Added `limit` and `limitText` options on the API to limit the number of repositories and customize owner's GitHub link text
 
-### [0.1.2] - 08-05-2015
-#### Changed
+#### [0.1.2] - 08-05-2015
+##### Changed
 - Append all of the HTML in one fell swoop as opposed to on each iteration over posts.
 
 #### [0.1.1] - 08-05-2015
